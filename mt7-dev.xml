@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<manifest>
+	<project name="mt7-dev/android_device_huawei_mt7_l09" path="device/huawei/mt7_l09" remote="github" />
+	<project name="mt7-dev/android_vendor_huawei_mt7_l09" path="vendor/huawei/mt7_l09" remote="github" />
+	<project name="mt7-dev/android_kernel_huawei_mt7_l09" path="kernel/huawei/mt7_l09" remote="github" />
+
+<!-- To build with twrp (experimental)
+    <project path="bootable/recovery-twrp" name="omnirom/android_bootable_recovery" remote="github" revision="android-6.0"/>
+-->
+
+</manifest>
