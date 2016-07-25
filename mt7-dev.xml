@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+  <remote  name="github_ssh"
+           fetch="ssh://git@github.com" />
+
 <manifest>
-	<project name="mt7-dev/android_device_huawei_mt7_l09" path="device/huawei/mt7_l09" remote="github" />
-	<project name="mt7-dev/android_vendor_huawei_mt7_l09" path="vendor/huawei/mt7_l09" remote="github" />
-	<project name="mt7-dev/android_kernel_huawei_mt7_l09" path="kernel/huawei/mt7_l09" remote="github" />
+	<project name="mt7-dev/android_device_huawei_mt7_l09" path="device/huawei/mt7_l09" remote="github_ssh" />
+	<project name="mt7-dev/android_kernel_huawei_mt7_l09" path="kernel/huawei/mt7_l09" remote="github_ssh" />
+  <!-- Vendor files cannot be pusblished, I will add a script to extract them from working device in repo android_device_huawei_mt7_l09 
+        Repo below is private for now -->
+  <project name="gabry3795/android_vendor_huawei_mt7_l09" path="vendor/huawei/mt7_l09" remote="github_ssh" /> 
 
 <!-- To build with twrp (experimental)
     <project path="bootable/recovery-twrp" name="omnirom/android_bootable_recovery" remote="github" revision="android-6.0"/>
