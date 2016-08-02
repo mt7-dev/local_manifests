@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <manifest>
-  <remote  name="github_ssh"
+  <remote name="github_ssh"
           fetch="ssh://git@github.com" />
-           
-	<project name="mt7-dev/android_device_huawei_mt7_l09" path="device/huawei/mt7_l09" remote="github_ssh" />
-	<project name="mt7-dev/android_kernel_huawei_mt7_l09" path="kernel/huawei/mt7_l09" remote="github_ssh" />
+          
+   <!-- Remove useless repos -->
+   <remove-project name="platform/frameworks/opt/telephony" path="frameworks/opt/telephony" />
+   <remove-project name="platform/frameworks/base" path="frameworks/base" />
+
+  <!-- Essential build repos 
+	<project name="mt7-dev/android_device_huawei_mt7_l09" path="device/huawei/mt7_l09" remote="github_ssh" revision="aosp-6.0.0_r1" />
+	<project name="mt7-dev/android_kernel_huawei_mt7_l09" path="kernel/huawei/mt7_l09" remote="github_ssh" revision="aosp-6.0.0_r1" /> -->
+  <!-- Modified frameworks for huawei -->
+  <project name="mt7-dev/aosp_frameworks_opt_telephony" path="frameworks/opt/telephony" remote="github_ssh" revision="aosp-6.0.0_r1" />
+  <project name="mt7-dev/aosp_platform_framework_base" path="frameworks/base" remote="github_ssh" revision="aosp-6.0.0_r1" />
+  
   <!-- Vendor files cannot be pusblished, I will add a script to extract them from working device in repo android_device_huawei_mt7_l09 
-        Repo below is private for now -->
-  <project name="gabry3795/android_vendor_huawei_mt7_l09" path="vendor/huawei/mt7_l09" remote="github_ssh" /> 
+        Repo below is private for now 
+  <project name="gabry3795/android_vendor_huawei_mt7_l09" path="vendor/huawei/mt7_l09" remote="github_ssh" revision="aosp-6.0.0_r1" /> -->
 
 <!-- To build with twrp (experimental)
     <project path="bootable/recovery-twrp" name="omnirom/android_bootable_recovery" remote="github" revision="android-6.0"/>
 -->
-
 </manifest>
+
+
