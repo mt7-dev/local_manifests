@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <manifest>
-  <remote name="github_ssh"
-          fetch="ssh://git@github.com" />
+  <remote name="github" fetch="https://github.com/mt7-dev" />
           
   <!-- Remove useless repos -->
   <remove-project name="platform/frameworks/opt/telephony" path="frameworks/opt/telephony" />
   <remove-project name="platform/frameworks/base" path="frameworks/base" />
+  <remove-project name="platform/prebuilts/qemu-kernel" path="prebuilts/qemu-kernel" />
 
   <!-- Essential build repos --> 
-	<project name="mt7-dev/android_device_huawei_mt7l09" path="device/huawei/mt7l09" remote="github_ssh" revision="aosp-6.0.0_r1" /> 
-  <project name="mt7-dev/android_kernel_huawei_mt7l09" path="kernel/huawei/mt7l09/kernel" remote="github_ssh" revision="3.10.86-aosp" />
+  <project name="android_device_huawei_mt7l09" path="device/huawei/mt7l09" remote="github" revision="aosp-6.0.0_r1" /> 
+  <project name="android_kernel_huawei_mt7l09" path="kernel/huawei/mt7l09/kernel" remote="github" revision="3.10.86-aosp" />
   <!-- Vendor can also be extracted with the script in repo android_device_huawei_mt7_l09 -->
-  <project name="mt7-dev/android_vendor_huawei_mt7_l09" path="vendor/huawei/mt7_l09" remote="github_ssh" revision="aosp-6.0.0_r1" />
+  <project name="android_vendor_huawei_mt7_l09" path="vendor/huawei/mt7_l09" remote="github" revision="aosp-6.0.0_r1" />
 
   <!-- Modified frameworks for huawei -->
-  <project name="mt7-dev/aosp_frameworks_opt_telephony" path="frameworks/opt/telephony" remote="github_ssh" revision="aosp-6.0.0_r1" />
-  <project name="mt7-dev/aosp_platform_framework_base" path="frameworks/base" remote="github_ssh" revision="aosp-6.0.0_r1" />
-  
-<!-- To build with twrp (experimental)
-    <project path="bootable/recovery-twrp" name="omnirom/android_bootable_recovery" remote="github" revision="android-6.0"/>
--->
+  <project name="aosp_frameworks_opt_telephony" path="frameworks/opt/telephony" remote="github" revision="aosp-6.0.0_r1" />
+  <project name="aosp_platform_framework_base" path="frameworks/base" remote="github" revision="aosp-6.0.0_r1" />
+
 </manifest>
-
-
